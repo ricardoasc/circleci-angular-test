@@ -26,6 +26,9 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+      - run: sudo npm cache clean -f
+      - run: sudo npm install -g n
+      - run: sudo n stable
       - run: npm install
 
       - save_cache:
@@ -36,6 +39,3 @@ jobs:
       - run: npm build
       - run: sudo npm install -g @angular/cli
       - run: ng serve
-      - run: sudo npm cache clean -f
-      - run: sudo npm install -g n
-      - run: sudo n stable
