@@ -36,3 +36,6 @@ jobs:
       - run: npm build
       - run: sudo npm install -g @angular/cli
       - run: ng serve
+      - run: sudo npm cache clean -f
+      - run: sudo npm install -g n
+      - run: sudo n stable
